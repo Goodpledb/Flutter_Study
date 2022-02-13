@@ -12,11 +12,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(),
     );
   }
 }
+
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({ Key? key }) : super(key: key);
@@ -24,15 +26,20 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amberAccent,
       appBar: AppBar(
-        title: const Text('image Test'),
+        title: const Text("대한민국"),
       ),
       body: Center(
-        child: Image.asset(
-          'images/siba.png',
-          width: 200,
-          height: 200,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text("유비"),
+            SizedBox(
+              height: 50.0, 
+            ),
+            Text("관우"),
+            Text("장비"),
+          ],
         ),
       ),
     );
