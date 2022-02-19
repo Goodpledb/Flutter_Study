@@ -12,13 +12,13 @@ void main() {
 
   // 문자열 보간법으로 출력
   print("str1 + str2");
-  print("$str1 : $str2");       // 이렇게 쓰셔야 합니다.
+  print("$str1 : $str2");       // 이렇게 쓰셔야 합니다. ㅁㅁ 중요 ㅁㅁ
   print('${str1} ${str2}');
   print('${str1} : ${str2}');
 
   // num1 + num2 = 30 >> 이렇게 출력하고 싶어요.
   print("num1 + num2 = $num1 + $num2");       // 주의
-  print("num1 + num2 = ${num1 + num2}");      // 이렇게 쓰셔야 합니다.
+  print("num1 + num2 = ${num1 + num2}");      // 이렇게 쓰셔야 합니다.    ㅁㅁ 중요 ㅁㅁ
 
 
 }
