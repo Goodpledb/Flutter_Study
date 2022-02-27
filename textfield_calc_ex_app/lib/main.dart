@@ -53,86 +53,91 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('간단한 계산기'),
-      ),
-      body: SingleChildScrollView(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('간단한 계산기'),
+        ),
+        body: SingleChildScrollView(
+          
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  TextField(
+                    controller: num1Controller,
+                    decoration: const InputDecoration(labelText: '첫번째 숫자를 입력하세요'),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 10,),
+                  TextField(
+                    controller: num2Controller,
+                    decoration: const InputDecoration(labelText: '두번째 숫자를 입력하세요'),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          // ------
+                          if (num1Controller.text.trim().isEmpty ||
+                          num2Controller.text.trim().isEmpty) {
+                            errorSnackBar(context);
+                          }
+                          else {
+                            calcResult();
+                          }
         
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              children: [
-                TextField(
-                  controller: num1Controller,
-                  decoration: const InputDecoration(labelText: '첫번째 숫자를 입력하세요'),
-                  keyboardType: TextInputType.number,
-                ),
-                const SizedBox(height: 10,),
-                TextField(
-                  controller: num2Controller,
-                  decoration: const InputDecoration(labelText: '두번째 숫자를 입력하세요'),
-                  keyboardType: TextInputType.number,
-                ),
-                const SizedBox(height: 20,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        // ------
-                        if (num1Controller.text.trim().isEmpty ||
-                        num2Controller.text.trim().isEmpty) {
-                          errorSnackBar(context);
-                        }
-                        else {
-                          calcResult();
-                        }
-      
-                      }, 
-                      child: const Text('계산하기'),
-                    ),
-                    const SizedBox(width: 30,),
-                    ElevatedButton(
-                      onPressed: () {
-                        // ------
-                        removeResult();
-                      }, 
-                      child: const Text('초기화'),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.red),
+                        }, 
+                        child: const Text('계산하기'),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 40,),
-                TextField(
-                  controller: addController,
-                  decoration: const InputDecoration(labelText: '덧셈 결과'),
-                  readOnly: true,
-                ),
-                const SizedBox(height: 10,),
-                TextField(
-                  controller: subController,
-                  decoration: const InputDecoration(labelText: '뺄셈 결과'),
-                  readOnly: true,
-                ),
-                const SizedBox(height: 10,),
-                TextField(
-                  controller: mulController,
-                  decoration: const InputDecoration(labelText: '곱셈 결과'),
-                  readOnly: true,
-                ),
-                const SizedBox(height: 10,),
-                TextField(
-                  controller: divController,
-                  decoration: const InputDecoration(labelText: '나눗셈 결과'),
-                  readOnly: true,
-                ),
-                const SizedBox(height: 10,),
-      
-              ],
+                      const SizedBox(width: 30,),
+                      ElevatedButton(
+                        onPressed: () {
+                          // ------
+                          removeResult();
+                        }, 
+                        child: const Text('초기화'),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.red),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 40,),
+                  TextField(
+                    controller: addController,
+                    decoration: const InputDecoration(labelText: '덧셈 결과'),
+                    readOnly: true,
+                  ),
+                  const SizedBox(height: 10,),
+                  TextField(
+                    controller: subController,
+                    decoration: const InputDecoration(labelText: '뺄셈 결과'),
+                    readOnly: true,
+                  ),
+                  const SizedBox(height: 10,),
+                  TextField(
+                    controller: mulController,
+                    decoration: const InputDecoration(labelText: '곱셈 결과'),
+                    readOnly: true,
+                  ),
+                  const SizedBox(height: 10,),
+                  TextField(
+                    controller: divController,
+                    decoration: const InputDecoration(labelText: '나눗셈 결과'),
+                    readOnly: true,
+                  ),
+                  const SizedBox(height: 10,),
+        
+                ],
+              ),
             ),
           ),
         ),
