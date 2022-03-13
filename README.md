@@ -4,6 +4,7 @@ https://github.com/zeushahn/Flutter_Weekend
 flutter2189
 
 # IOS
+ios / Runner / Info.plist
 ```
 <key>io.flutter.embedded_views_preview</key>
 <string>YES</string>
@@ -17,6 +18,7 @@ flutter2189
 ```
 
 # AOS
+android / main / res / AndroidManifest.xml
 ```
 android:usesCleartextTraffic="true"
 ```
