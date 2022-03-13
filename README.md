@@ -3,6 +3,20 @@
 https://github.com/zeushahn/Flutter_Weekend
 flutter2189
 
-# Ios
+# IOS
+```
+<key>io.flutter.embedded_views_preview</key>
+<string>YES</string>
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+<true/>
+<key>NSAllowsArbitraryLoadsInWebContent</key>
+<true/>
+</dict>	
+```
 
-# Aos
+# AOS
+```
+android:usesCleartextTraffic="true"
+```
